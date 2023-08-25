@@ -7,8 +7,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
+import jakarta.persistence.Transient;
 
 @Entity
 @Table(name="user")
@@ -21,12 +21,17 @@ public class User {
 
     private String name;
     private String email;
-    private String status;
-    private String password;
-   
-    @OneToMany(mappedBy = "user")
+    private String status = "ACTIVE";
+    private String password;  
+    @Transient
     private List<Transaction> transactions = new ArrayList<>();
     
+	public List<Transaction> getTransactions() {
+		return transactions;
+	}
+	public void setTransactions(List<Transaction> transactions) {
+		this.transactions = transactions;
+	}
 	public Long getId() {
 		return id;
 	}
