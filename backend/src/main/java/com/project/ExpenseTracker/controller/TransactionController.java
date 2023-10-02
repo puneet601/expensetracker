@@ -39,21 +39,21 @@ public class TransactionController {
 		return new ResponseEntity<>(transactionService.addTransaction(transaction),HttpStatus.OK);
 	}
 	
-	 @GetMapping("/transactions/daily")
+	 @GetMapping("/daily")
 	    public List<Transaction> getTransactionsByDate(
 	            @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate targetDate,
 	            @RequestParam String timeZoneId) {
 	 return transactionService.listTransactionsByDay(targetDate,timeZoneId);
 	 }
 	 
-	 @GetMapping("/transactions/monthly")
+	 @GetMapping("/monthly")
 	    public List<Transaction> getTransactionsByMonth(
 	            @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) YearMonth targetMonth,
 	            @RequestParam String timeZoneId) {
 		 return transactionService.listTransactionsByMonth(targetMonth, timeZoneId);
 	    }
 
-	 @GetMapping("/transactions/yearly")
+	 @GetMapping("/yearly")
 	    public List<Transaction> getTransactionsByYear(
 	            @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) Year targetYear,
 	            @RequestParam String timeZoneId) {
