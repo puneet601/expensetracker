@@ -3,7 +3,7 @@ import axios from "axios";
 export async function login(email, password) {
   try {
     const response = await axios.post(
-      "http://192.168.1.10:8080/trackmyfinance/auth/login",
+      "http://192.168.1.8:8080/trackmyfinance/auth/login",
       {
         email: email,
         password: password,
@@ -22,7 +22,7 @@ export async function login(email, password) {
 export async function createUser(email, password) {
   try {
     const response = await axios.post(
-      "http://192.168.1.10:8080/trackmyfinance/auth/registerUser",
+      "http://192.168.1.8:8080/trackmyfinance/auth/registerUser",
       {
         name: "name",
         email: email,

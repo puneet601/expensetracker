@@ -1,6 +1,6 @@
 import { View, Text, TextInput, StyleSheet } from "react-native";
 
-import { Colors } from "../../constants/styles";
+import { GlobalStyles } from "../../constants/styles";
 
 function Input({
   label,
@@ -39,16 +39,16 @@ const styles = StyleSheet.create({
     marginBottom: 4,
   },
   labelInvalid: {
-    color: Colors.error500,
+    color: GlobalStyles.error500,
   },
   input: {
     paddingVertical: 8,
     paddingHorizontal: 6,
-    backgroundColor: Colors.primary100,
+    backgroundColor: GlobalStyles.primary100,
     borderRadius: 4,
     fontSize: 16,
   },
   inputInvalid: {
-    backgroundColor: Colors.error100,
+    backgroundColor: GlobalStyles.error100,
   },
 });
